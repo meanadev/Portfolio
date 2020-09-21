@@ -1,0 +1,32 @@
+.resume {
+  position: relative;
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+  padding-bottom: 30px;
+  background-color: $white;
+  border-radius: 5px;
+}
+
+.resume__header {
+  position: relative;
+  width: 100%;
+  height: 80px;
+  margin: 0;
+  padding: 0;
+  padding-top: 24px;
+  padding-left: 30px;
+  font-size: 20px;
+  font-weight: 500;
+  color: $text-dark-grey;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 90%;
+    height: 1px;
+    background-image: $stroke-horiz-half;
+  }
+}
