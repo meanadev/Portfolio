@@ -6,6 +6,13 @@
   margin-bottom: 20px;
   background-color: $white;
   border-radius: 5px;
+
+  @media (min-width: $viewport-large) {
+    position: absolute;
+    max-height: 640px;
+    overflow-y: scroll;
+    visibility: hidden;
+  }
 }
 
 .about__header {
@@ -19,6 +26,10 @@
   font-size: 20px;
   font-weight: 500;
   color: $text-dark-grey;
+
+  &::first-letter {
+    color: $bg-blue-box;
+  }
 
   &::after {
     content: "";
@@ -37,6 +48,11 @@
   margin: 0;
   margin-bottom: 40px;
   padding: 0;
+
+  @media (min-width: $viewport-mid) {
+    display: flex;
+    flex-wrap: nowrap;
+  }
 }
 
 .about__desc-text {
@@ -49,6 +65,32 @@
   font-weight: 300;
   line-height: 32px;
   color: $text-grey;
+
+  @media (min-width: $viewport-mid) {
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: -16px;
+      right: 0;
+      width: 1px;
+      height: 100%;
+      background-image: $stroke-vertical;
+    }    
+  }
+}
+
+.about__desc {
+  @media (min-width: $viewport-mid) {
+    flex-basis: 50%;
+  }
+}
+
+.about__info {
+  @media (min-width: $viewport-mid) {
+    flex-basis: 50%;
+  }
 }
 
 .about__list {
@@ -58,6 +100,10 @@
   margin: 0;
   padding: 0;
   list-style: none;
+
+  @media (min-width: $viewport-mid) {
+  margin-top: 30px;
+  }
 }
 
 .about__item {
@@ -78,6 +124,12 @@
     height: 1px;
     background-image: $stroke-linear-grey;
   }
+
+  &:last-child {
+    &::after {
+      display: none;
+    }
+  }
 }
 
 .about__text {
@@ -97,5 +149,9 @@
   &--color {
     background-color: $bg-blue-box;
     border-radius: 3px;
+  }
+
+  @media (min-width: $viewport-mid) {
+    font-size: 14px;
   }
 }

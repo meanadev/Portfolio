@@ -1,21 +1,104 @@
 .profile {
   position: relative;
-  width: 100%;
+  max-width: 400px;
   height: auto;
+  margin: 0;
+  margin: 0 auto;
   margin-bottom: 20px;
+  padding: 0;
+  padding-top: 70px;
   background-color: $white;
   border-radius: 5px;
+
+  @media (min-width: $viewport-mid) {
+    min-width: 575px;
+    margin-top: 20px;
+    padding-top: 0;
+  }
+
+  @media (min-width: $viewport-large) {
+    min-width: 480px;
+    max-height: 675px;
+    box-shadow: $shadow-profile;
+    z-index: 2;
+  }
 }
 
 .profile__img {
+  position: relative;
   width: 100%;
-  height: 310px;
+  height: 375px;
+  margin-bottom: 15px;
   overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: -85px;
+    left: -30px;
+    width: 300px;
+    height: 100px;
+    background-color: $white;
+    transform: rotate(15deg);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -80px;
+    right: -40px;
+    width: 320px;
+    height: 100px;
+    background-color: $white;
+    transform: rotate(170deg);
+  }
+
+
+  @media (min-width: $viewport-mid) {
+    height: 450px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: -64px;
+      left: -30px;
+      width: 300px;
+      height: 100px;
+      background-color: $white;
+      transform: rotate(15deg);
+      z-index: 2;
+    }
+  
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -70px;
+      right: -40px;
+      width: 360px;
+      height: 100px;
+      background-color: $white;
+      transform: rotate(170deg);
+    }  
+  }
+
+  @media (min-width: $viewport-large) {
+    height: 375px;
+  }
 }
 
 .profile__photo {
   width: 100%;
   margin-top: -30px;
+
+  @media (min-width: $viewport-mid) {
+    margin-top: -95px;
+    transform: scale(0.9);
+  }
+
+  @media (min-width: $viewport-large) {
+    margin-top: -65px;
+    transform: scale(0.75);
+  }
 }
 
 .profile__desc {
@@ -50,10 +133,21 @@
   &::after {
     content: "";
     position: absolute;
-    bottom: 60px;
+    bottom: 56px;
     width: 90%;
     height: 1px;
     background-image: $stroke-linear-grey;
+  }
+
+  @media (min-width: $viewport-mid) {
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 71px;
+      width: 90%;
+      height: 1px;
+      background-image: $stroke-linear-grey;
+    }  
   }
 }
 
@@ -77,29 +171,91 @@
   width: 20px;
   height: 20px;
   fill: $black;
+
+  &:hover {
+    width: 22px;
+    height: 22px;
+    fill: $bg-blue-box;
+  }
 }
 
 .profile__footer {
   display: flex;
   justify-content: space-around;
+  padding-top: 17px;
+  height: 57px;
+
+  @media (min-width: $viewport-mid) {
+    height: 80px;
+    padding-top: 30px;
+  }
 }
 
 .profile__footer-link {
   position: relative;
-  margin-bottom: 20px;
-  color: $text-dark-grey;
-  text-transform: uppercase;
+  flex-basis: 50%;
   text-decoration: none;
 
   &:first-child {
     &::after {
       content: "";
       position: absolute;
-      top: -15px;
-      right: -35%;
+      top: -17px;
+      right: 0;
       width: 1px;
-      height: 200%;
+      height: 100%;
       background-image: $stroke-vertical;
-    }  
+    } 
+
+    @media (min-width: $viewport-mid) {
+      &::after {
+        content: "";
+        position: absolute;
+        top: -22px;
+        right: 0;
+        width: 1px;
+        height: 100%;
+        background-image: $stroke-vertical;
+      }   
+    }
+  }
+}
+
+.profile__footer-container {
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: fit-content;
+}
+
+.profile__footer-text {
+  display: inline-block;
+  width: fit-content;
+  margin: 0;
+  margin: 0 auto;
+  margin-right: 5px;
+  padding: 0;
+  font-size: 14px;
+  color: $text-dark-grey;
+  text-transform: uppercase;
+
+  &:hover {
+    color: $bg-blue-box;
+  }
+
+  @media (min-width: $viewport-mid) {
+    font-size: 16px;
+  }
+}
+
+.profile__footer-icon {
+  top: 5px;
+  left: 0;
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+
+  &:hover {
+    fill: $bg-blue-box;
   }
 }

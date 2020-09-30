@@ -1,4 +1,5 @@
 .education {
+  position: relative;
   width: 100%;
   height: auto;
   margin: 0;
@@ -8,11 +9,23 @@
   padding-right: 30px;
 }
 
+.education__icon {
+  position: absolute;
+  top: 20px;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  fill: $bg-blue-box;
+}
+
 .education__header {
   position: relative;
-  width: 100%;
+  display: inline-block;
+  left: 40px;
+  width: 80%;
   height: 60px;
   margin: 0;
+  margin-bottom: 40px;
   padding: 0;
   padding-top: 24px;
   font-size: 18px;
@@ -29,4 +42,63 @@
     height: 1px;
     background-image: $stroke-linear-grey;
   }
+}
+
+.education__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.education__item {
+  position: relative;
+  width: auto;
+  height: fit-content;
+  margin: 0;
+  margin-top: 40px;
+  padding: 0;
+  padding-bottom: 20px;
+  color: $text-grey;
+
+  &:first-child {
+    margin-top: 0;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 90%;
+    height: 1px;
+    background-image: $stroke-horiz-half;
+  }
+}
+
+.education__date {
+  width: fit-content;
+  padding: 3px 14px;
+  font-size: 12px;
+  color: $stroke-grey;
+  border: 1px solid $brd-grey;
+  border-radius: 4px;
+}
+
+.education__place {
+  padding: 0;
+  margin: 0;
+  font-size: 20px;
+  color: $text-dark-grey;
+}
+
+.education__form {
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.education__desc {
+  font-size: 14px;
+  line-height: 26px;
+  font-weight: 400;
 }

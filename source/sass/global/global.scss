@@ -1,7 +1,8 @@
 *,
 *::before,
 *::after {
-  box-sizing: inherit;
+  box-sizing: border-box;
+  cursor: pointer;
 }
 
 .visually-hidden {
@@ -15,4 +16,20 @@
   clip-path: inset(100%);
   clip: rect(0 0 0 0);
   overflow: hidden;
+}
+
+::-webkit-scrollbar-track {
+	-webkit-box-shadow: none;
+	background-color: transparent;
+}
+
+::-webkit-scrollbar {
+	width: 6px;
+	background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: rgba(0,0,0,0.3);
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
 }

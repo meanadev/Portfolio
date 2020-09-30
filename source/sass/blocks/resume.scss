@@ -6,6 +6,14 @@
   padding-bottom: 30px;
   background-color: $white;
   border-radius: 5px;
+
+  @media (min-width: $viewport-large) {
+    position: absolute;
+    max-height: 640px;
+    overflow-y: scroll;
+    visibility: hidden;
+
+  }
 }
 
 .resume__header {
@@ -20,6 +28,10 @@
   font-weight: 500;
   color: $text-dark-grey;
 
+  &::first-letter {
+    color: $bg-blue-box;
+  }
+
   &::after {
     content: "";
     position: absolute;
@@ -28,5 +40,23 @@
     width: 90%;
     height: 1px;
     background-image: $stroke-horiz-half;
+  }
+}
+
+.resume__flex {
+  @media (min-width: $viewport-mid) {
+    position: relative;
+    display: flex;
+
+    &::before {
+      display: none;
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 1px;
+      height: 100%;
+      background-image: $stroke-vertical;
+    }
   }
 }
