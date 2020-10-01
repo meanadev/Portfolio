@@ -6,12 +6,12 @@
   margin-bottom: 20px;
   background-color: $white;
   border-radius: 5px;
+  z-index: 5;
 
   @media (min-width: $viewport-large) {
     position: absolute;
     max-height: 640px;
     overflow-y: scroll;
-    z-index: 10;
   }
 }
 
