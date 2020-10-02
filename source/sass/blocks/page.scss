@@ -7,6 +7,10 @@
   box-sizing: border-box;
   background-image: $bg-blue;
   background-color: #396CAF;
+
+  @media (min-width: $viewport-large) {
+    padding-top: 20px;
+  }
 }
 
 .page__wrapper {
